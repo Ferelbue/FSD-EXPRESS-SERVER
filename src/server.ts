@@ -1,7 +1,7 @@
 
 import express from "express";
 import dotenv from "dotenv";
-import { getRoles } from "../controllers/roleController";
+import { createRoles, deleteRoles, getRoles, putRoles } from "../controllers/roleController";
 
 dotenv.config();
 
@@ -26,4 +26,6 @@ app.get('/healthy', (req,res) => {
 // ROLES RUTES
 
 app.get('/roles', getRoles)
-
+app.post('/roles', createRoles)
+app.put('/roles', putRoles)
+app.delete('/roles', deleteRoles)
