@@ -17,9 +17,9 @@ export const createRoles = (req: Request,res: Response) => {
             message: "Roles created succesfully"
         })
 }
-export const putRoles = (req: Request,res: Response) => {
+export const updateRoles = (req: Request,res: Response) => {
 
-    res.status(202).json(
+    res.status(200).json(
         {
             success: true,
             message: "Roles updated succesfully"
@@ -27,7 +27,7 @@ export const putRoles = (req: Request,res: Response) => {
 }
 export const deleteRoles = (req: Request,res: Response) => {
 
-    res.status(203).json(
+    res.status(200).json(
         {
             success: true,
             message: "Roles deleted succesfully"
