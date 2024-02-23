@@ -5,7 +5,9 @@ import { createRoles, deleteRoles, getRoles, updateRoles } from "../controllers/
 
 dotenv.config();
 
-const app = express()
+const app = express();
+
+app.use(express.json());
 
 const PORT = process.env.PORT || 4001;
 
@@ -27,5 +29,5 @@ app.get('/healthy', (req,res) => {
 
 app.get('/roles', getRoles)
 app.post('/roles', createRoles)
-app.put('/roles', updateRoles)
-app.delete('/roles', deleteRoles)
+app.put('/roles/:id', updateRoles) // los dos puntos indican que lo que pongas a continuacion es dinamico
+app.delete('/roles/:id', deleteRoles)
