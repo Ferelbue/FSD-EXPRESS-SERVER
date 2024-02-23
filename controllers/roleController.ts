@@ -1,5 +1,6 @@
 import { Request, Response } from "express"
 
+// READ/GET
 export const getRoles = (req: Request,res: Response) => {
 
     res.status(200).json(
@@ -9,6 +10,7 @@ export const getRoles = (req: Request,res: Response) => {
         })
 }
 
+//CREATED/POST
 export const createRoles = (req: Request,res: Response) => {
 
     res.status(201).json(
@@ -17,6 +19,8 @@ export const createRoles = (req: Request,res: Response) => {
             message: "Roles created succesfully"
         })
 }
+
+//UPDATE/PUT/PACH
 export const updateRoles = (req: Request,res: Response) => {
 
     res.status(200).json(
@@ -25,6 +29,8 @@ export const updateRoles = (req: Request,res: Response) => {
             message: "Roles updated succesfully"
         })
 }
+
+//DELETE
 export const deleteRoles = (req: Request,res: Response) => {
 
     res.status(200).json(
