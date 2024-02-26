@@ -41,7 +41,6 @@ export const updateRoles = (req: Request,res: Response) => {
 //DELETE
 export const deleteRoles = (req: Request,res: Response) => {
 
-    req.body.id
     console.log(req.body.id)
 
     res.status(200).json(

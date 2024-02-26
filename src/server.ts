@@ -1,33 +1,20 @@
 
-import express from "express";
-import dotenv from "dotenv";
-import { createRoles, deleteRoles, getRoles, updateRoles } from "../controllers/roleController";
+import "dotenv/config"; //archivo con las variables de entorno
+import { app } from "./app";
 
-dotenv.config();
 
-const app = express();
-
-app.use(express.json());
-
+//Si existe un puerto en el archivo .env lo usa. Si no usa el 4001
 const PORT = process.env.PORT || 4001;
 
-app.listen(PORT, () => {
-    console.log(`Server is running ${PORT}`)
-})
 
-app.get('/healthy', (req,res) => {
+const startServer = () => {
 
-    res.status(200).json(
-    {
-        success: true,
-        message: "Server is healthy"
+    app.listen(PORT, () => {
+        console.log(`Server is running in port: ${PORT}`)
     })
-})
+
+}
+
+startServer();
 
 
-// ROLES RUTES
-
-app.get('/roles', getRoles)
-app.post('/roles', createRoles)
-app.put('/roles/:id', updateRoles) // los dos puntos indican que lo que pongas a continuacion es dinamico
-app.delete('/roles/:id', deleteRoles)
