@@ -1,9 +1,10 @@
 
 import express from "express";
 import { createRoles, deleteRoles, getRoles, updateRoles } from "./controllers/roleController";
-
+import { AppDataSource } from "./db";
 export const app = express();
 
+   
 
 //parsear el texto plano recibido a JSON
 app.use(express.json());
