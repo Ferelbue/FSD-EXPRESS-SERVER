@@ -9,6 +9,8 @@ import { Books1708950463093 } from "./database/migrations/1708950463093-books"
 import { Loans1708951036421 } from "./database/migrations/1708951036421-loans"
 import { FavoriteBooks1708952083087 } from "./database/migrations/1708952083087-favorite_books"
 import { AddIsActiveColumnToUsers1709024942422 } from "./database/migrations/1709024942422-add_is_active_column_to_users"
+import { Role } from "./models/Role"
+import { User } from "./models/User"
 
 
 export const AppDataSource = new DataSource({
@@ -18,7 +20,9 @@ export const AppDataSource = new DataSource({
     username: process.env.DB_USER || "root",
     password: process.env.DB_PASSWORD || "1234",
     database: process.env.DB_DATABASE || "test",
-    entities: [],
+    entities: [
+        Role,
+        User],
     migrations: [
         Roles1708945316395, 
         Users1708948573797,
