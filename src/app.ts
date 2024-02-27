@@ -5,10 +5,8 @@ import { createRoles, deleteRoles, getRoles, updateRoles } from "./controllers/r
 export const app = express();
 
    
-
 //parsear el texto plano recibido a JSON
 app.use(express.json());
-
 
 //Comprueba si el servidor esta activado
 app.get('/healthy', (req,res) => {
