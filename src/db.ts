@@ -11,6 +11,10 @@ import { FavoriteBooks1708952083087 } from "./database/migrations/1708952083087-
 import { AddIsActiveColumnToUsers1709024942422 } from "./database/migrations/1709024942422-add_is_active_column_to_users"
 import { Role } from "./models/Role"
 import { User } from "./models/User"
+import { Loan } from "./models/Loan"
+import { Book } from "./models/Book"
+import { Author } from "./models/Author"
+import { FavoriteBook } from "./models/FavoriteBook"
 
 
 export const AppDataSource = new DataSource({
@@ -22,9 +26,13 @@ export const AppDataSource = new DataSource({
     database: process.env.DB_DATABASE || "test",
     entities: [
         Role,
-        User],
+        User,
+        Loan,
+        Book,
+        Author,
+        FavoriteBook],
     migrations: [
-        Roles1708945316395, 
+        Roles1708945316395,
         Users1708948573797,
         Authors1708949932472,
         Books1708950463093,

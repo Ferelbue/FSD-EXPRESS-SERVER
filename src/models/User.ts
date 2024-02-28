@@ -34,10 +34,10 @@ export class User extends BaseEntity{
     @JoinColumn({ name: "role_id" })
     role!: Role;
 
-    // @OneToMany(() => FavoriteBook, (favorite_book) => favorite_book.user)
-    // favorite_books!: FavoriteBook[];
+    @OneToMany(() => FavoriteBook, (favorite_book) => favorite_book.user)
+    favorite_books!: FavoriteBook[];
 
-    // @OneToMany(() => Loan, (loan) => loan.user)
-    // loans!: Loan[];
+    @OneToMany(() => Loan, (loan) => loan.user)
+    loans!: Loan[];
 
 }

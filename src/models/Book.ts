@@ -22,10 +22,10 @@ export class Book extends BaseEntity{
     @JoinColumn({ name: "author_id" })
     author!: Author;
 
-    // @OneToMany(() => FavoriteBook, (favorite_book) => favorite_book.book)
-    // favorite_books!: FavoriteBook[];
+    @OneToMany(() => FavoriteBook, (favorite_book) => favorite_book.book)
+    favorite_books!: FavoriteBook[];
 
-    // @OneToMany(() => Loan, (loan) => loan.book)
-    // loans!: Loan[];
+    @OneToMany(() => Loan, (loan) => loan.book)
+    loans!: Loan[];
 
 }
