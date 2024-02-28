@@ -17,11 +17,11 @@ export class Loan extends BaseEntity {
     @Column({ name: 'return_date' })
     returnDate!: Date
 
-    @ManyToOne(() => User, (user) => user.loans)
-    @JoinColumn({ name: "user_id" })
-    user!: User;
+    // @ManyToOne(() => User, (user) => user.loans)
+    // @JoinColumn({ name: "user_id" })
+    // user!: User;
 
-    @ManyToOne(() => Book, (book) => book.favourite_books)
+    @ManyToOne(() => Book, (book) => book.loans)
     @JoinColumn({ name: "book_id" })
     book!: Book;
 

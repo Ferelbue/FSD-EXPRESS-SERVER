@@ -8,11 +8,11 @@ export class FavouriteBook extends BaseEntity{
     @PrimaryGeneratedColumn()
     id!: number
 
-    @ManyToOne(() => User, (user) => user.favourite_books)
-    @JoinColumn({ name: "user_id" })
-    user!: User;
+    // @ManyToOne(() => User, (user) => user.favourite_books)
+    // @JoinColumn({ name: "user_id" })
+    // user!: User;
 
-    @ManyToOne(() => Book, (book) => book.favourite_books)
-    @JoinColumn({ name: "book_id" })
-    book!: Book;
+    // @ManyToOne(() => Book, (book) => book.favourite_books)
+    // @JoinColumn({ name: "book_id" })
+    // book!: Book;
 }

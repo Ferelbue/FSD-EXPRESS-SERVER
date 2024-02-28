@@ -1,6 +1,7 @@
 
 import express from "express";
 import { createRoles, deleteRoles, getRoles, updateRoles } from "./controllers/roleController";
+import { register } from "./controllers/authController";
 
 export const app = express();
 
@@ -24,4 +25,6 @@ app.post('/roles', createRoles)
 app.put('/roles/:id', updateRoles) // los dos puntos indican que lo que pongas a continuacion es dinamico
 app.delete('/roles/:id', deleteRoles)
 
+// AUTH RUTES
 
+app.post ('/api/register', register)
