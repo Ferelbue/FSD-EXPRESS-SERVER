@@ -21,8 +21,8 @@ export class Loan extends BaseEntity {
     // @JoinColumn({ name: "user_id" })
     // user!: User;
 
-    @ManyToOne(() => Book, (book) => book.loans)
-    @JoinColumn({ name: "book_id" })
-    book!: Book;
+    // @ManyToOne(() => Book, (book) => book.loans)
+    // @JoinColumn({ name: "book_id" })
+    // book!: Book;
 
 }

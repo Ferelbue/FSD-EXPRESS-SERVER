@@ -1,6 +1,6 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm"
 import { Role } from "./Role"
-import { FavouriteBook } from "./FavouriteBook"
+import { FavoriteBook } from "./FavoriteBook"
 import { Loan } from "./Loan"
 
 @Entity('users')
@@ -18,6 +18,9 @@ export class User extends BaseEntity{
     @Column({ name: 'password' })
     password!: string
 
+    // @Column({ name: 'role_id' }) // otra forma de recuperar el ID 
+    // roleId!: string
+
     @Column({ name: 'created_at' })
     createdAt!: Date
 
@@ -31,8 +34,8 @@ export class User extends BaseEntity{
     @JoinColumn({ name: "role_id" })
     role!: Role;
 
-    // @OneToMany(() => FavouriteBook, (favourite_book) => favourite_book.user)
-    // favourite_books!: FavouriteBook[];
+    // @OneToMany(() => FavoriteBook, (favorite_book) => favorite_book.user)
+    // favorite_books!: FavoriteBook[];
 
     // @OneToMany(() => Loan, (loan) => loan.user)
     // loans!: Loan[];

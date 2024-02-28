@@ -2,17 +2,17 @@ import { BaseEntity, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } fro
 import { User } from "./User";
 import { Book } from "./Book";
 
-@Entity('favourite_books')
-export class FavouriteBook extends BaseEntity{
+@Entity('favorite_books')
+export class FavoriteBook extends BaseEntity{
 
     @PrimaryGeneratedColumn()
     id!: number
 
-    // @ManyToOne(() => User, (user) => user.favourite_books)
+    // @ManyToOne(() => User, (user) => user.favorite_books)
     // @JoinColumn({ name: "user_id" })
     // user!: User;
 
-    // @ManyToOne(() => Book, (book) => book.favourite_books)
+    // @ManyToOne(() => Book, (book) => book.favorite_books)
     // @JoinColumn({ name: "book_id" })
     // book!: Book;
 }

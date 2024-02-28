@@ -1,6 +1,6 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm"
 import { Author } from "./Author"
-import { FavouriteBook } from "./FavouriteBook"
+import { FavoriteBook } from "./FavoriteBook"
 import { Loan } from "./Loan"
 
 @Entity('books')
@@ -22,10 +22,10 @@ export class Book extends BaseEntity{
     @JoinColumn({ name: "author_id" })
     author!: Author;
 
-    // @OneToMany(() => FavouriteBook, (favourite_book) => favourite_book.book)
-    // favourite_books!: FavouriteBook[];
+    // @OneToMany(() => FavoriteBook, (favorite_book) => favorite_book.book)
+    // favorite_books!: FavoriteBook[];
 
-    @OneToMany(() => Loan, (loan) => loan.book)
-    loans!: Loan[];
+    // @OneToMany(() => Loan, (loan) => loan.book)
+    // loans!: Loan[];
 
 }
