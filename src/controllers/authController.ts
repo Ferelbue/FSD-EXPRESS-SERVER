@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import { User } from "../models/User";
 
-
+// CREATE
 export const register = async (req: Request, res: Response) => {
 
     try {

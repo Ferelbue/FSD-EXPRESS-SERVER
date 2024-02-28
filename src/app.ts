@@ -2,21 +2,21 @@
 import express from "express";
 import { createRoles, deleteRoles, getRoles, updateRoles } from "./controllers/roleController";
 import { register } from "./controllers/authController";
-import { getUsers } from "./controllers/userController";
+import { getUserById, getUsers, updateUserById } from "./controllers/userController";
 
 export const app = express();
 
-   
+
 //parsear el texto plano recibido a JSON
 app.use(express.json());
 
 //Comprueba si el servidor esta activado
-app.get('/healthy', (req,res) => {
+app.get('/healthy', (req, res) => {
     res.status(200).json(
-    {
-        success: true,
-        message: "Server is healthy"
-    })
+        {
+            success: true,
+            message: "Server is healthy"
+        })
 })
 
 
@@ -27,9 +27,9 @@ app.put('/roles/:id', updateRoles) // los dos puntos indican que lo que pongas a
 app.delete('/roles/:id', deleteRoles)
 
 // AUTH ROUTES
-app.post ('/api/register', register)
+app.post('/api/register', register)
 
 // USER ROUTES
 app.get('/api/users', getUsers)
-
-
+app.get('/api/user/:id', getUserById)
+app.put('/api/user/:id', updateUserById)
