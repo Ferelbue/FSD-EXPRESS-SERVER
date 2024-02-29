@@ -1,7 +1,7 @@
 
 import express from "express";
 import { createRoles, deleteRoles, getRoles, updateRoles } from "./controllers/roleController";
-import { register } from "./controllers/authController";
+import { login, register } from "./controllers/authController";
 import { deleteUserById, getUserById, getUsers, updateUserById } from "./controllers/userController";
 
 export const app = express();
@@ -28,6 +28,7 @@ app.delete('/roles/:id', deleteRoles)
 
 // AUTH ROUTES
 app.post('/api/register', register)
+app.post('/api/login', login)
 
 // USER ROUTES
 app.get('/api/users', getUsers)
