@@ -3,6 +3,7 @@ import express from "express";
 import { createRoles, deleteRoles, getRoles, updateRoles } from "./controllers/roleController";
 import { login, register } from "./controllers/authController";
 import { deleteUserById, getUserById, getUsers, updateUserById } from "./controllers/userController";
+import { auth } from "./middlewares/auth";
 
 export const app = express();
 
@@ -31,7 +32,7 @@ app.post('/api/register', register)
 app.post('/api/login', login)
 
 // USER ROUTES
-app.get('/api/users', getUsers)
+app.get('/api/users',auth, getUsers)
 app.get('/api/user/:id', getUserById)
 app.put('/api/user/:id', updateUserById)
 app.delete('/api/user/:id', deleteUserById)

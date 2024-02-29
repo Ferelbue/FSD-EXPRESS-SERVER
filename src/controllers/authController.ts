@@ -102,7 +102,8 @@ export const login = async (req: Request, res: Response) => {
                     password: true,
                     email: true,
                     role: {
-                        id: true
+                        id: true,
+                        name: true,
                     }
                 }// Hasta aqui me trae lo que yo le especifico tanto en user como en la tabla de relacciones
             }
@@ -118,14 +119,14 @@ export const login = async (req: Request, res: Response) => {
 
         const invalidPAssword = bcrypt.compareSync(password, user.password)
 
-        if(!invalidPAssword){
+        if (!invalidPAssword) {
             return res.status(400).json({
                 success: false,
                 message: "Email or password invalid",
             })
 
         }
-    //create TOKEN
+        //create TOKEN
         const token = jwt.sign(
             {
                 userId: user.id,
