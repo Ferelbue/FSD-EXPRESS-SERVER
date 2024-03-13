@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "seed": "ts-node ./src/database/seeders/seeders.ts",
     "migration-run": "typeorm-ts-node-commonjs migration:run -d ./src/db.ts",
     "migration-drop": "typeorm-ts-node-commonjs migration:revert -d ./src/db.ts",
     "dev": "nodemon ./src/server.ts",

@@ -4,6 +4,7 @@ import { createRoles, deleteRoles, getRoles, updateRoles } from "./controllers/r
 import { login, register } from "./controllers/authController";
 import { deleteUserById, getUserById, getUsers, updateUserById } from "./controllers/userController";
 import { auth } from "./middlewares/auth";
+import { isSuperAdmin } from "./middlewares/isSuperAdmin";
 
 export const app = express();
 
@@ -32,7 +33,13 @@ app.post('/api/register', register)
 app.post('/api/login', login)
 
 // USER ROUTES
-app.get('/api/users',auth, getUsers)
-app.get('/api/user/:id', getUserById)
+app.get('/api/users',getUsers)
+app.get('/api/user/:id', auth, isSuperAdmin, getUserById)
 app.put('/api/user/:id', updateUserById)
 app.delete('/api/user/:id', deleteUserById)
+
+
+// GET Y DELETE NO ENVIAR PARAMETROS EN BODY. SOLO EN EL ENDPOINT
+// PUT Y POST PARAMETROS EN BODY Y EN EL ENDPOINT
+
+
